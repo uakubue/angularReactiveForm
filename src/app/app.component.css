@@ -1,0 +1,350 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    background-image: url(../assets/natureImg.jpeg);
+    background-position: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sub_section{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 6px;
+    margin: 2em 0;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    
+}
+
+header{
+    font-size: 3em;
+    font-weight: bold;
+    padding-bottom: 2em 0;
+    margin-top: 1em;
+}
+.input_box{
+    padding: 10px .2em;
+    width: 50%;
+}
+.new_input_box{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_n{
+    margin-bottom: .5em;
+    width: 16em;
+    height: 2em;
+    border-radius: 4px;
+}
+
+input{
+    padding: .3em .7em;
+}
+
+.input{
+    width: 100%;
+    height: 3em;
+    border-radius: 4px;
+}
+::placeholder{
+    padding: .7em .4em;
+}
+
+.input_i_date{
+    width: 100%;
+    height: 3em;
+    border-radius: 4px;
+    border: none;
+}
+
+input.ng-invalid.ng-touched{
+   border: 1px solid red;
+} 
+
+input.ng-pending{
+   border: 3px solid yellow;
+}
+
+input.ng-valid{
+   border: 3px solid green;
+}
+
+.input_row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.input_d_row{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.date_input{
+    display: flex;
+    flex: 0.5;
+    align-items: center;
+    justify-content: start;
+    height: 3em;
+    width: 50%;
+    border-radius: 4px;
+    border: none;
+    padding: .8em 0;
+}
+.gender_box{
+    display: flex;
+    flex: 0.5;
+    justify-content: start;
+    align-items: start;
+}
+
+.gender_iDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+
+
+
+.btn_add_skill{
+    margin: .3em 1em;
+    padding: .3em 3em;
+    background-color: rgb(40, 112, 3);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_delete_skill{
+    width: 4em;
+    margin: .3em 1em;
+    padding: .3em .5em;
+    background-color: rgb(253, 56, 16);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.btn_submit_form{
+    margin: .5em 1em;
+    padding: .5em 7em;
+    background-color: rgb(55, 49, 235);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.gender_option{
+    padding: .2em .8em;
+    font-size: .8em;
+}
+small{
+    color: red;
+    font-weight: bold;
+}
+
+.expe_div{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    padding: .7em 0;
+    border-radius: 6px;
+    margin-bottom: 1em;
+}
+
+.expe_div > h1{
+    font-size: 100%;
+    margin-bottom: 1em;
+}
+
+label{
+    font-size: 1em;
+    
+}
+
+.expe_div > .column{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.btn_delete_exp{
+    width: 27em;
+    margin: .3em 1em;
+    padding: .3em .5em;
+    background-color: rgb(253, 56, 16);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.cpy_name{
+    margin-bottom: 1em;
+}
+
+
+@media(min-width: 280px) and (max-width: 770px){
+    .section{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1em;
+        height: auto;
+        background-color: #fff;
+    }
+
+    .sub_section{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 6px;
+        padding-bottom: 2em;
+    }
+
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        color: #fff;
+    }
+
+    header{
+        font-size: 2em;
+        padding-bottom: .7em;
+    }
+    
+    .input_row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .input_d_row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 69%;
+    }
+
+    .input{
+        width: 100%;
+        height: 3em;
+        border-radius: 4px;
+        border: none;
+    }
+
+    .input_n{
+        margin-bottom: .5em;
+        width: 100%;
+        height: 2em;
+        border-radius: 4px;
+        border: none;
+    }
+
+    .expe_div{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: #000;
+        padding: .7em 2em;
+        border-radius: 6px;
+        margin-bottom: .8em;
+    }
+
+    .expe_div > .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        padding: 0;
+    }
+
+    select{
+        width: 100%;
+        border: none;
+    }
+
+    .btn_delete_exp{
+        width: 80%;
+        margin: .3em 1em;
+        padding: .3em .5em;
+        background-color: rgb(253, 56, 16);
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .btn_submit_form{
+        width: 90%;
+        margin: .5em 2em;
+        padding: 1em 7em;
+        background-color: rgb(55, 49, 235);
+        color: white;
+        border: none;
+        border-radius: 7px;
+        cursor: pointer;
+    }
+  
+}

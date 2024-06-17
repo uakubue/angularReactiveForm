@@ -231,7 +231,7 @@ label{
 }
 
 
-/* @media(min-width: 280px) and (max-width: 770px){
+@media(min-width: 280px) and (max-width: 770px){
     .section{
         width: 100%;
         display: flex;
@@ -346,4 +346,4 @@ label{
         cursor: pointer;
     }
   
-} */
+}

@@ -18,10 +18,14 @@ header{
     text-align: center;
     padding: 1em;
 }
+small{
+    color: red;
+    font-weight: bold;
+}
 .first__row{
     width: 100%;
     display: grid;
-    grid-template-rows: 1em;
+    grid-template-rows: 1.5em;
     grid-template-columns: 50% 50%;
     padding-bottom: 2em;
 }
@@ -29,21 +33,52 @@ header{
     width: 100%;
     padding: 8px;
     border-radius: 6px;
+    padding-right: .7em;
 }
 .second__row{
     width: 100%;
     display: grid;
-    grid-template-rows: 2em;
+    grid-template-rows: 3em;
     grid-template-columns: 50% 50%;
 }
 .second__row .input{
     width: 100%;
     padding: 8px;
     border-radius: 6px;
+    display: flex;
 }
-
-
-
+.third__row{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1.5em;
+    grid-template-columns: 50% 50%;
+    padding-bottom: 2em;
+}
+.third__row .input{
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    padding-right: .7em;
+}
+.date__input .input{
+    width: 100%;
+}
+.gender__box{
+    font-size: 98%;
+}
+.gender__iDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: .4em;
+}
+.gender__iDiv h3{
+    font-size: 90%;
+}
+.gender__iDiv label{
+    font-size: 70%;
+}
 
 
 

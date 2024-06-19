@@ -22,14 +22,14 @@
         </div>
 
         <div class="second__row">
-          <div class="input__box">
-            <input type="email" class="input" placeholder="Email" formControlName="email"/><br />
-            <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
-              *Email is a required field
-            </small>
-          </div>
+            <div class="input__box">
+                <input type="email" class="input" placeholder="Email" formControlName="email"/><br />
+                <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
+                *Email is a required field
+                </small>
+            </div>
 
-          <div class="third__box">
+          <div class="input__box">
             <input type="text" class="input" placeholder="username" formControlName="username"/><br />
             <small *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').touched">
               *Username is a required field
@@ -37,37 +37,36 @@
           </div>
         </div>
 
-        <div class="input_row">
-          <div class="date__input">
-            <input type="date" class="input_i_date" placeholder="Date of Birth" formControlName="dob" />
-          </div>
+        <div class="third__row">
+            <div class="date__input input__box">
+                <input type="date" class="input" placeholder="Date of Birth" formControlName="dob" />
+            </div>
 
-          <div class="gender_box">
-            <h3>Gender</h3>
-            
-            <div class="gender_iDiv">
-              <div class="gender_option">
-                <div class="gender">
-                  <label for="check-male">Male</label>
-                  <input type="radio" value="male"  id="check-male" formControlName="gender"/>
-                </div>
-              </div>
+            <div class="gender__box input__box">                
+                <div class="gender__iDiv">
+                    <h3>Gender</h3>
+                    <div class="gender_option">
+                        <div class="gender">
+                            <label for="check-male">Male</label>
+                            <input type="radio" value="male"  id="check-male" formControlName="gender"/>
+                        </div>
+                    </div>
 
-              <div class="gender_option">
-                <div class="gender">
-                  <label for="check-female">Female</label>
-                  <input type="radio" value="female" id="check-female" formControlName="gender"/>
-                </div>
-              </div>
+                    
+                    <div class="gender">
+                        <label for="check-female">Female</label>
+                        <input type="radio" value="female" id="check-female" formControlName="gender"/>
+                    </div>
 
-              <div class="gender_option">
-                <div class="gender">
-                  <label for="check-preferNotToSay">Prefer not to say</label>
-                  <input type="radio" value="other" id="check-preferNotToSay" formControlName="gender"/>
+                    <div class="gender_option">
+                        <div class="gender">
+                        <label for="check-preferNotToSay">Custom</label>
+                        <input type="radio" value="other" id="check-preferNotToSay" formControlName="gender"/>
+                        </div>
+                    </div>
+                    
                 </div>
-              </div>
-            </div>      
-          </div>
+            </div>
         </div>
 
         <div class="new_input_box" formArrayName="skills">

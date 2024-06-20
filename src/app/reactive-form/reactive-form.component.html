@@ -21,11 +21,14 @@
             </div>
         </div>
 
-        <div class="second__row">
+        <div class="first__row">
             <div class="input__box">
                 <input type="email" class="input" placeholder="Email" formControlName="email"/><br />
                 <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
                 *Email is a required field
+                </small>
+                <small *ngIf="reactiveForm.get('email').errors?.['noSpaceAllowed'] && reactiveForm.get('email').touched">
+                *No space is allowed for firstname.
                 </small>
             </div>
 
@@ -42,9 +45,10 @@
                 <input type="date" class="input" placeholder="Date of Birth" formControlName="dob" />
             </div>
 
-            <div class="gender__box input__box">                
+            <div class="gender__box input__box">
+                <h3>Gender</h3>              
                 <div class="gender__iDiv">
-                    <h3>Gender</h3>
+                    
                     <div class="gender_option">
                         <div class="gender">
                             <label for="check-male">Male</label>
@@ -70,7 +74,7 @@
         </div>
 
         <div class="new_input_box" formArrayName="skills">
-          <div class="column" *ngFor="let control of reactiveForm.get('skills')['controls']; let i = index">
+          <div class="column skillDel" *ngFor="let control of reactiveForm.get('skills')['controls']; let i = index">
             <input 
               class="input_n"
               type="text" 
@@ -79,27 +83,27 @@
               [formControlName]="i"
             >
 
-            <button type="button" class="btn_delete_skill" (click)="deleteSkill(i)">delete</button>
+            <button type="button" class="btn_delete_skill" (click)="deleteSkill(i)">delete skill</button>
           </div>      
           
         </div>
-        <button type="button" class="btn_add_skill" (click)="AddSkills()">Add skill</button>
+        <button class="btn_add_skill" (click)="AddSkills()">Add skill</button>
 
         <div class="input_box" formArrayName="experience">
           <div *ngFor="let exp of reactiveForm.get('experience')['controls']; let i = index" [formGroupName]="i">
             <div>
               <div class="expe_div">
                 <h1>Experience {{i + 1}}</h1>
-                <input type="text" class="cpy_name" placeholder="Company Name" formControlName="company">
+                <input type="text" class="input_n" placeholder="Company Name" formControlName="company">
 
                 <div class="column">
                   <div class="select_box">
                     <select formControlName="position">
-                      <option hidden>Position</option>
-                      <option >Junior Developer</option>
-                      <option >Software Developer</option>
-                      <option >Senior Developer</option>
-                      <option >Team Lead</option>
+                      <option value="0" hidden>Position</option>
+                      <option value="1">Junior Developer</option>
+                      <option value="2">Software Developer</option>
+                      <option value="3">Senior Developer</option>
+                      <option value="4">Team Lead</option>
                     </select>
                   </div>
                   <input type="number" class="input_n" placeholder="Experience" formControlName="totalExp">
@@ -110,7 +114,7 @@
                   <input type="date" class="input_n" placeholder="End date" formControlName="end">
                 </div>
 
-                <button type="button" class="btn_delete_exp" (click)="delExp(i)">
+                <button type="button" class="btn_deleteExp" (click)="delExp(i)">
                   Delete experience
                 </button>
               </div>

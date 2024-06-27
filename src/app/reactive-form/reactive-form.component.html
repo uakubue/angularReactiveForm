@@ -15,9 +15,14 @@
 
             <div class="input__box">
                 <input type="text" class="input" placeholder="Lastname" formControlName="lastname"/><br />
-                <small *ngIf="reactiveForm.get('lastname').invalid && reactiveForm.get('lastname').touched">
+                <small *ngIf="reactiveForm.get('lastname').errors?.['required'] && reactiveForm.get('lastname').touched">
                 *Lastname is a required field
                 </small>
+
+                <small *ngIf="reactiveForm.get('lastname').errors?.['noSpaceAllowed'] && reactiveForm.get('lastname').touched">
+                *No space is allowed for firstname.
+                </small>
+                
             </div>
         </div>
 
@@ -28,7 +33,7 @@
                 *Email is a required field
                 </small>
                 <small *ngIf="reactiveForm.get('email').errors?.['noSpaceAllowed'] && reactiveForm.get('email').touched">
-                *No space is allowed for firstname.
+                *No space is allowed for email.
                 </small>
             </div>
 

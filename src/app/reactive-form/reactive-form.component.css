@@ -139,7 +139,7 @@ input.ng-pending{
 }
 
 input.ng-valid{
-   border: 3px solid green;
+   border: 3px solid rgb(17, 244, 17);
 }
 
 

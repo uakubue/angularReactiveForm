@@ -36,7 +36,25 @@ export class ReactiveFormComponent implements OnInit{
         })
       ])
     })
+
+    // this.reactiveForm.get('firstname').valueChanges.subscribe((value) => {
+    //   console.log(value)
+    // })
+
+    // this.reactiveForm.valueChanges.subscribe((data) => {
+    //   console.log(data);
+    // })
+
+    this.reactiveForm.get('email').statusChanges.subscribe((value) => {
+      console.log(value);
+    })
+
+    this.reactiveForm.get('username').statusChanges.subscribe((value) => {
+      console.log(value);
+    })
   }
+
+  
 
   onFormSubmitted(){
     console.log(this.reactiveForm);

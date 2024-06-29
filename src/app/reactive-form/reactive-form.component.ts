@@ -11,7 +11,7 @@ import { CustomValidators } from '../Validators/noSpaceAllowed.validator'
 export class ReactiveFormComponent implements OnInit{
 
   title = 'reactiveForm';
-
+  formData: any = {};
   reactiveForm: FormGroup;
 
   ngOnInit(): void {
@@ -57,8 +57,9 @@ export class ReactiveFormComponent implements OnInit{
   
 
   onFormSubmitted(){
-    console.log(this.reactiveForm);
-  }
+    console.log(this.reactiveForm.value);
+    this.formData = this.reactiveForm.value;
+  } 
 
   AddSkills(){
     (<FormArray>this.reactiveForm.get('skills'))
@@ -87,6 +88,51 @@ export class ReactiveFormComponent implements OnInit{
   delExp(index: number){
     const deleteExp = <FormArray>this.reactiveForm.get('experience');
     deleteExp.removeAt(index)
+  }
+
+  generateUsername(){
+    let username = "";
+
+    const Fname: string = this.reactiveForm.get('firstname').value;
+    const Lname: string = this.reactiveForm.get('lastname').value;
+    const dateOB: string = this.reactiveForm.get('dob').value;
+
+    if(Fname.length >= 3){
+      username += Fname.slice(0, 3);
+    }else{
+      username += Fname;
+    }
+
+    if(Lname.length >= 3){
+      username += Lname.slice(0, 3);
+    }else{
+      username += Lname;
+    }
+
+    let dateTime = new Date(dateOB);
+    username += dateTime.getFullYear();
+
+    username = username.toLowerCase();
+
+    //console.log(username)
+
+    // this.reactiveForm.setValue({
+    //   firstname: this.reactiveForm.get('firstname').value,
+    //   lastname: this.reactiveForm.get('lastname').value,
+    //   email: this.reactiveForm.get('email').value,
+    //   username: username,
+    //   dob: this.reactiveForm.get('dob').value,
+    //   gender: this.reactiveForm.get('gender').value,
+    //   skills: this.reactiveForm.get('skills').value,
+    //   experience: this.reactiveForm.get('experience').value
+    // })
+
+    // this.reactiveForm.get('username').setValue(username);
+
+    this.reactiveForm.patchValue({
+      username: username
+    })
+
   }
 
 }

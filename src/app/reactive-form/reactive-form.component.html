@@ -1,4 +1,5 @@
-<form [formGroup]="reactiveForm" (ngSubmit)="onFormSubmitted()">
+<div class="form__div">
+  <form [formGroup]="reactiveForm" (ngSubmit)="onFormSubmitted()">
     <div class="sub_section">
         <header>Register here</header>
 
@@ -26,7 +27,7 @@
             </div>
         </div>
 
-        <div class="first__row">
+        <div class="second__row">
             <div class="input__box">
                 <input type="email" class="input" placeholder="Email" formControlName="email"/><br />
                 <small *ngIf="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
@@ -36,18 +37,11 @@
                 *No space is allowed for email.
                 </small>
             </div>
-
-          <div class="input__box">
-            <input type="text" class="input" placeholder="username" formControlName="username"/><br />
-            <small *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').touched">
-              *Username is a required field
-            </small>
-          </div>
         </div>
 
         <div class="third__row">
             <div class="date__input input__box">
-                <input type="date" class="input" placeholder="Date of Birth" formControlName="dob" />
+                <input type="date" value="DOB" class="input" placeholder="Date of Birth" formControlName="dob" />
             </div>
 
             <div class="gender__box input__box">
@@ -77,6 +71,20 @@
                 </div>
             </div>
         </div>
+
+        <div class="second__row">
+          <div class="input__box">
+            <input type="text" class="input" placeholder="username" formControlName="username"/><br />
+            <small *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').touched">
+              *Username is a required field
+            </small>
+          </div>
+          <input type="button" class="Uname__generator__btn" value="create a username" (click)="generateUsername()"
+            [disabled]="!(reactiveForm.get('firstname').value && reactiveForm.get('lastname').value && reactiveForm.get('dob').value )"
+          >
+        </div>  
+
+        
 
         <div class="new_input_box" formArrayName="skills">
           <div class="column skillDel" *ngFor="let control of reactiveForm.get('skills')['controls']; let i = index">
@@ -133,6 +141,25 @@
         </div>
         
 
-        <input type="submit" value="Submit" class="btn_submit_form" [disabled]="reactiveForm.invalid" />
+        <input type="submit" value="Submit form" class="btn_submit_form" [disabled]="reactiveForm.invalid" />
     </div>
   </form>
+</div>
+
+<div class="data__div">
+  <div class="user_detail_cont">
+    <div class="user__avatar">
+      <p>{{formData.firstname?.slice(0,1)}}{{formData.lastname?.slice(0,1)}}</p>
+    </div>
+
+    <div class="user__details">
+      <div class="user_name">
+        <b>Name: {{formData.firstname}} {{formData.lastname}}</b>
+      </div>
+
+      <p><b>Email:</b> {{formData.email}}</p>
+      <p><b>Username:</b> {{formData.username}}</p>
+      <p><b>Date of Birth:</b> {{formData.dob}}</p>
+    </div>
+  </div>
+</div>
